@@ -17,26 +17,26 @@ var_dump($rows);
 // kode php lama
 $rows = mysqli_query($koneksi, $sql);
 
-    $barang = [
-        [
-            "nama" => "Laptop",
-            "stok" => "6",
-            "status" => "Rusak"
-        ],
-        [
-            "nama" => "PC",
-            "stok" => "38",
-            "status" => "Baik"
-        ],
-        [
-            "nama" => "Printer",
-            "stok" => "1",
-            "status" => "Rusak"
-        ],
-    ];
-var_dump($barang);
-echo "<br>";
-echo "<br>";
+//     $barang = [
+//         [
+//             "nama" => "Laptop",
+//             "stok" => "6",
+//             "status" => "Rusak"
+//         ],
+//         [
+//             "nama" => "PC",
+//             "stok" => "38",
+//             "status" => "Baik"
+//         ],
+//         [
+//             "nama" => "Printer",
+//             "stok" => "1",
+//             "status" => "Rusak"
+//         ],
+//     ];
+// var_dump($barang);
+// echo "<br>";
+// echo "<br>";
 
 
 
@@ -91,6 +91,7 @@ echo "<br>";
                     <th> Roles </th>
                     <th> Tag Member </th>
                     <th> status </th>
+                    <th> Atur </th>
                 </tr>
             </thead>
             <tbody>
@@ -109,7 +110,10 @@ echo "<br>";
                 <td> <?= $item["Roles"] ?></td>
                 <td> <?= $item["Tag_member"] ?></td>
                 <td> <?= $item["status"] ?></td>
-                
+                <td> 
+                    <a href="Edit_barang.php?id=<?=$item['id_member']?>">  edit </a>
+                    <a href="hapus_barang.php?id=<?=$item['id_member']?>" onclick="return confirm('Hapus data ini?')"> hapus </a>
+                </td>
                 <!-- <td> <a href="#"> edit </a> <a href="#">Hapus</a> </td> -->
             </tr>
 
